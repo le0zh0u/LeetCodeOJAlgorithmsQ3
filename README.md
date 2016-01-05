@@ -88,6 +88,9 @@ code:
         }
         for(int i = 0; i<s.length();i++){
             for(int j =s.length()-1;j>i;j--){
+            	if((j-i)<=result){
+                    break;
+                }
                 String subString = s.substring(i,j);
                 Set set=new HashSet();
                 for(int k=0; k<subString.length();k++){
