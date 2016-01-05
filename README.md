@@ -76,4 +76,41 @@ error:
 think:
 	
 	根据之前写的算法，碰到这样的字符串确实不对，继续想。
+	之后想到的是，设置两个指针，分别指向string 的头（指针1）和尾（指针2），先指针2向指针1靠拢，并判断两个指针之间的子字符串是否有重复的字符，如果有则pass，使指针2向左移，或指针1向右移，如果没有则保存长度。
+	
+code:
+
+	public class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int result = 0;
+        if(s.equals("")){
+            return 0;
+        }
+        for(int i = 0; i<s.length();i++){
+            for(int j =s.length()-1;j>i;j--){
+                String subString = s.substring(i,j);
+                Set set=new HashSet();
+                for(int k=0; k<subString.length();k++){
+                  set.add(subString.charAt(k));
+                }
+                if(subString.length() == set.size()){
+                    int length = j-i+1;
+                    result = result > length? result : length;
+                }else{
+                    continue;
+                } 
+            }
+        }
+        return result;
+    }
+	}
+	
+error:
+
+	Last executed input:
+	"hifqiqnpvuutkcpiodzrljdlslwlxnagxhwfylxvgtosvfdkjcdulihfudrtrtaoaywakvvqo"
+		
+	Submission Result: Time Limit Exceeded
+	
+	fuck！cao！
 
