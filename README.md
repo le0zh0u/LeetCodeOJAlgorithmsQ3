@@ -7,9 +7,11 @@ Longest Substring Without Repeating Characters
 Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for "abcabcbb" is "abc", which the length is 3. For "bbbbb" the longest substring is "b", with the length of 1.
 	
 thinking:
+
 	遍历String字符串，将每个字符存入hashset中，获取hashset的长度值即为结果。
 	
 code:
+	
 	public class Solution {
     public int lengthOfLongestSubstring(String s) {
         int result = 0;
@@ -39,6 +41,7 @@ think：
 	继续寻找规律，发现the longest substring without repeating letters for "abcabcbb" is "abc"，For "bbbbb" the longest substring is "b"，如果输入为"pwwkew"，那没有重复的子字符串为“kew”，之前没有理解substring的含义。打算用HashMap做，记得可以在map查key值比较快
 	
 code:
+	
 	public class Solution {
     public int lengthOfLongestSubstring(String s) {
         int result = 0;
